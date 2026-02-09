@@ -5,146 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dossiê Técnico - PC TEC Assistência</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }
-        h1 { color: #d32f2f; border-bottom: 2px solid #d32f2f; margin-top: 40px; }
-        h2 { color: #1976d2; margin-top: 30px; border-left: 5px solid #1976d2; padding-left: 10px; }
+        body { font-family: sans-serif; line-height: 1.6; max-width: 950px; margin: 0 auto; padding: 20px; color: #333; }
+        h1 { color: #d32f2f; border-bottom: 3px solid #d32f2f; margin-top: 50px; font-size: 26px; }
+        h2 { color: #1976d2; margin-top: 35px; border-left: 5px solid #1976d2; padding-left: 10px; font-size: 22px; }
         p { margin-bottom: 15px; text-align: justify; }
         strong { color: #000; }
         img { display: block; margin: 20px 0; border: 1px solid #ccc; box-shadow: 3px 3px 10px rgba(0,0,0,0.1); }
+        .alerta { color: #d32f2f; font-weight: bold; background-color: #fff3f3; padding: 15px; border: 1px solid #d32f2f; margin: 10px 0; display: block; }
     </style>
 </head>
 <body>
 
-    <p><strong>LIMPANDO O LIXO AMADOR QUE POSTAM NAS REDES SOCIAIS</strong></p>
-    <h1>DOCUMENTO TÉCNICO 01: A VERDADE SOBRE CMD, POWERSHELL E COMANDOS</h1>
+<p><strong>LIMPANDO O LIXO AMADOR QUE POSTAM NAS REDES SOCIAIS</strong></p>
 
-    <h2>1. A Ferramenta e o Acesso (ADM)</h2>
-    <p><strong>CMD (Prompt de Comando):</strong> Ferramenta clássica baseada em texto. Focada em compatibilidade e comandos diretos de sistema.</p>
-    <p><strong>PowerShell:</strong> Framework moderno e poderoso. Trabalha com "objetos", permitindo automações profundas que o CMD não alcança.</p>
-    <p><strong>Por que EXECUTAR COMO ADM?</strong> Ambos precisam de privilégios de Administrador para acessar e modificar arquivos protegidos nas pastas System32 e no Registro. Sem esse nível de acesso, o Windows bloqueia o comando por segurança, tornando-o inútil para manutenção real.</p>
+<h1>DOCUMENTO TÉCNICO 01: A VERDADE SOBRE CMD, POWERSHELL E COMANDOS</h1>
 
-    <h2>2. Procedimento Padrão: CHKDSK vs. SFC</h2>
-    <p><strong>Regra de Ouro:</strong> Primeiro conserta o terreno (Disco), depois pinta a casa (Arquivos).</p>
-    <p><strong>CHKDSK /F /R (Vem primeiro):</strong><br>
-    /f (Fix): Corrige erros lógicos no índice do disco.<br>
-    /r (Recover): Localiza setores físicos defeituosos (bad blocks), tenta recuperar os dados e isola a área para o Windows não usá-la mais.</p>
-    <p><strong>Uso:</strong> Essencial para estabilizar o hardware antes de mexer no software.</p>
-    <p><strong>SFC /SCANNOW (Vem depois):</strong><br>
-    Função: Verifica se os arquivos do Windows (.dll, .exe) estão corrompidos e os substitui por cópias limpas.<br>
-    Uso: Repara o sistema operacional sobre a base física já corrigida pelo CHKDSK.</p>
+<h2>1. A Ferramenta e o Acesso (ADM)</h2>
+<p><strong>CMD (Prompt de Comando):</strong> Ferramenta clássica baseada em texto. Focada em compatibilidade e comandos diretos de sistema.</p>
+<p><strong>PowerShell:</strong> Framework moderno e poderoso. Trabalha com "objetos", permitindo automações profundas que o CMD não alcança.</p>
+<p><strong>Por que EXECUTAR COMO ADM?</strong> Ambos precisam de privilégios de Administrador para acessar e modificar arquivos protegidos nas pastas System32 e no Registro. Sem esse nível de acesso, o Windows bloqueia o comando por segurança, tornando-o inútil para manutenção real.</p>
 
-    <h2>3. A Lista dos "Comandos Inúteis" (Vícios de Redes Sociais)</h2>
-    <p>Comandos que gurus usam para impressionar, mas que não trazem performance real:</p>
-    <p><strong>No CMD:</strong><br>
-    color a + dir /s: Apenas muda a cor para verde e lista pastas. Puro teatro visual.<br>
-    ipconfig /flushdns: Limpa o cache de nomes de sites. Não aumenta a velocidade da fibra.<br>
-    gpupdate /force: Atualiza políticas de rede empresarial. Não injeta velocidade no PC doméstico.<br>
-    tree: Mostra a estrutura de pastas graficamente. Estético, não funcional.<br>
-    defrag c: /u (em SSDs): Perigoso. Desgasta as células do SSD sem necessidade técnica.</p>
+<h2>2. Procedimento Padrão: CHKDSK vs. SFC</h2>
+<p><strong>Regra de Ouro:</strong> Primeiro conserta o terreno (Disco), depois pinta a casa (Arquivos).</p>
+<p><strong>CHKDSK /F /R (Vem primeiro):</strong> /f (Fix): Corrige erros lógicos no índice do disco. /r (Recover): Localiza setores físicos defeituosos (bad blocks), tenta recuperar os dados e isola a área para o Windows não usá-la mais.</p>
+<p><strong>Uso:</strong> Essencial para estabilizar o hardware antes de mexer no software.</p>
+<p><strong>SFC /SCANNOW (Vem depois):</strong> Função: Verifica se os arquivos do Windows (.dll, .exe) estão corrompidos e os substitui por cópias limpas. Uso: Repara o sistema operacional sobre a base física já corrigida pelo CHKDSK.</p>
 
-    <p><strong>No POWERSHELL:</strong><br>
-    Scripts de "Debloat": Prometem limpar o Windows, mas costumam quebrar funções e jogos ao remover bibliotecas essenciais.<br>
-    Repair-WindowsImage...: Comando DISM. Só tem utilidade se o Windows estiver quebrado; em sistema saudável, é perda de tempo.<br>
-    Disable-MMAgent -MemoryCompression: Desativa a compressão de memória. Em máquinas com pouca RAM, causa lentidão extrema.<br>
-    Get-Service | Where-Object...: Apenas uma forma difícil de ver o que já está no Gerenciador de Tarefas. Usado para assustar o leigo.</p>
+<h2>3. A Lista dos "Comandos Inúteis" (Vícios de Redes Sociais)</h2>
+<p><strong>No CMD:</strong> color a + dir /s: Apenas muda a cor para verde e lista pastas. Puro teatro visual. ipconfig /flushdns: Limpa o cache de nomes de sites. gpupdate /force: Atualiza políticas de rede empresarial. tree: Mostra a estrutura de pastas graficamente. defrag c: /u (em SSDs): Perigoso. Desgasta as células do SSD sem necessidade técnica.</p>
 
-    <h1>OS VÍCIOS DO MENU EXECUTAR (WIN+R): O LIXO DA INTERNET</h1>
+<p><strong>No POWERSHELL:</strong> Scripts de "Debloat": Prometem limpar o Windows, mas costumam quebrar funções e jogos. Repair-WindowsImage...: Comando DISM. Só tem utilidade se o Windows estiver quebrado. Disable-MMAgent -MemoryCompression: Desativa a compressão de memória. Em máquinas com pouca RAM, causa lentidão extrema.</p>
 
-    <p><strong>1. msconfig (O erro mais perigoso)</strong><br>
-    O que pregam: Dizem que você deve ir em "Inicialização do Sistema" > "Opções Avançadas" e marcar a caixa "Número de processadores" selecionando o valor máximo para "desbloquear" o PC.<br>
-    Realidade: Isso é um vício gravíssimo. O Windows já utiliza todos os núcleos por padrão. Essa caixa serve para desenvolvedores limitarem o hardware para testes. Ao marcar isso, você engessa o kernel do Windows, podendo causar telas azuis, impedir o funcionamento do Turbo Boost e gerar gargalos severos de processamento.</p>
+<h1>OS VÍCIOS DO MENU EXECUTAR (WIN+R): O LIXO DA INTERNET</h1>
 
-    <p><strong>2. netplwiz (A falsa velocidade)</strong><br>
-    O que pregam: Dizem que esse comando acelera o boot do Windows drasticamente e ajuda a identificar "invasores" na conta.<br>
-    Realidade: Ele apenas gerencia o login automático. Não reduz o tempo de carregamento do sistema (Kernel). O único resultado real é remover a barreira de proteção física (a senha), deixando o computador vulnerável a qualquer pessoa que ligue a máquina.</p>
+<p><strong>1. msconfig (O erro mais perigoso):</strong> O que pregam: Dizem que você deve ir em "Inicialização do Sistema" > "Opções Avançadas" e marcar a caixa "Número de processadores". Realidade: Isso é um vício gravíssimo. O Windows já utiliza todos os núcleos por padrão. Ao marcar isso, você engessa o kernel do Windows, podendo causar telas azuis e impedir o Turbo Boost.</p>
 
-    <p><strong>3. Prefetch (O exterminador de performance)</strong><br>
-    O que pregam: Dizem que a pasta Prefetch é um "lixo acumulado" que trava o Windows e deve ser esvaziada diariamente.<br>
-    Realidade: O Prefetch é o mapa de carregamento do processador. Ele guarda o rastro dos programas que você mais usa para que eles abram mais rápido. Ao apagar, você força o processador a trabalhar o dobro para reconstruir esses mapas. Os arquivos ali têm apenas alguns KB e não pesam nada no sistema.</p>
+<p><strong>2. netplwiz (A falsa velocidade):</strong> Realidade: Ele apenas gerencia o login automático. Não reduz o tempo de carregamento do sistema. Apenas remove a barreira de senha.</p>
 
-    <p><strong>4. Temp e %Temp% (A ilusão do FPS)</strong><br>
-    O que pregam: Vendem a ideia de que limpar essas pastas é a solução definitiva para parar a lentidão em jogos e aumentar o FPS.<br>
-    Realidade: Esses arquivos ocupam apenas espaço passivo no disco. Se o seu SSD ou HD não está com 100% de lotação, apagar esses arquivos tem efeito zero na taxa de quadros (FPS) ou na velocidade de processamento da CPU e GPU. A pasta Temp é a lixeira do Sistema (drivers e Windows), enquanto a pasta %Temp% é o rascunho do Usuário (apps e navegador). Limpá-las apenas recupera espaço em disco e não aumenta o FPS ou o poder do processador. O erro amador é dizer que isso "desafoga" o PC, quando na verdade pode até deixar a abertura de programas mais lenta no primeiro momento.</p>
+<p><strong>3. Prefetch (O exterminador de performance):</strong> Realidade: O Prefetch é o mapa de carregamento do processador. Ao apagar, você força o processador a trabalhar o dobro para reconstruir esses mapas.</p>
 
-    <p><strong>5. services.msc (O desativador de funções)</strong><br>
-    O que pregam: Fazem listas gigantes de serviços que você "deve" desativar para deixar o Windows "super leve".<br>
-    Realidade: Desativar serviços sem conhecimento técnico quebra funções vitais como a fila de impressão, a busca do Windows, atualizações de segurança e a sincronização de contas. O ganho de memória RAM em máquinas modernas é irrelevante perto da instabilidade gerada.</p>
+<p><strong>4. Temp e %Temp% (A ilusão do FPS):</strong> Realidade: Esses arquivos ocupam apenas espaço passivo no disco. Limpá-las apenas recupera espaço e não aumenta o FPS ou o poder do processador.</p>
 
-    <p><strong>6. cleanmgr (Uso distorcido)</strong><br>
-    O que pregam: Que é a ferramenta mágica de "faxina" para acabar com o lag do PC.<br>
-    Realidade: É uma ferramenta útil para espaço em disco, mas os gurus a vendem como solução de velocidade. Limpar a lixeira ou arquivos temporários antigos não torna um processador lento em um processador rápido.</p>
+<p><strong>5. services.msc (O desativador de funções):</strong> Realidade: Desativar serviços sem conhecimento técnico quebra funções vitais como a fila de impressão e busca do Windows.</p>
 
-    <p><strong>7. O CASO DO MRT: FERRAMENTA REAL VS. O USO AMADOR</strong><br>
-    O que o usuário pesquisa: MRT (no Iniciar ou no Win+R). O que as redes sociais dizem: "O antivírus secreto e gratuito que a Microsoft esconde de você para limpar todo o seu PC".<br>
-    A Realidade Técnica: O MRT não é um antivírus. Ele é uma ferramenta de pós-infecção, atualizada mensalmente pela Microsoft para remover apenas ameaças específicas e conhecidas que já estão ativas no sistema. Ele não oferece proteção em tempo real. Se você baixar um vírus agora, o MRT não vai te impedir; ele só vai agir se você executá-lo manualmente e se aquele vírus específico estiver na lista dele. O Lixo Amador: "Vender" o MRT como substituto de uma proteção ativa ou como um "segredo de performance" é um erro técnico. Ele é apenas um utilitário de varredura pontual. Obs: "vender" no sentido de mostrar.</p>
+<p><strong>7. O CASO DO MRT:</strong> A Realidade Técnica: O MRT não é um antivírus. Ele é uma ferramenta de pós-infecção, atualizada mensalmente para remover ameaças específicas conhecidas.</p>
 
-    <h1>MAPA DA BAGUNÇA: O LIXO DAS CONFIGURAÇÕES VIA "PESQUISAR"</h1>
+<h1>MAPA DA BAGUNÇA: O LIXO DAS CONFIGURAÇÕES VIA "PESQUISAR"</h1>
 
-    <p><strong>1. Aparência e Desempenho</strong><br>
-    O que o usuário pesquisa: Aparência ou Ajustar a aparência. Onde vai dar: Janela Opções de Desempenho > Aba Efeitos Visuais. A Bagunça: Mandam marcar "Ajustar para obter um melhor desempenho". Realidade: Em máquinas modernas, a economia de recursos é insignificante. O PC apenas ganha um visual datado de 1995, enquanto o processamento real de dados continua o mesmo.</p>
+<p><strong>1. Aparência e Desempenho:</strong> Janela Opções de Desempenho > Aba Efeitos Visuais. A Bagunça: Mandam marcar "Ajustar para obter um melhor desempenho". Realidade: Em máquinas modernas, a economia é insignificante e o visual fica datado.</p>
 
-    <p><strong>2. Plano de Energia (O Mito do Desempenho Máximo)</strong><br>
-    O que o usuário pesquisa: Plano de Energia ou Editar plano de energia. Onde vai dar: Painel de Controle > Opções de Energia. A Bagunça: Ativar o modo "Desempenho Máximo" ou "Alta Performance". Realidade: Em desktops, o processador já sobe o clock automaticamente quando exigido. Esse modo apenas impede o descanso do hardware quando ocioso, gerando calor e gasto de energia desnecessários, sem ganho real de FPS.</p>
+<p><strong>2. Plano de Energia:</strong> Ativar o modo "Desempenho Máximo". Realidade: Em desktops, o clock já sobe automático. Esse modo apenas impede o descanso do hardware, gerando calor desnecessário.</p>
 
-    <p><strong>3. Configurações de Privacidade</strong><br>
-    O que o usuário pesquisa: Privacidade. Onde vai dar: Configurações > Privacidade e Segurança. A Bagunça: Desativar todas as chaves de telemetria e diagnósticos. Realidade: O impacto na performance é nulo. O Windows não acelera porque parou de enviar logs. O risco real é bloquear permissões que softwares e drivers legítimos precisam para funcionar.</p>
+<p><strong>3. Configurações de Privacidade:</strong> Desativar chaves de telemetria. Realidade: O impacto na performance é nulo. O risco é bloquear permissões que softwares legítimos precisam.</p>
 
-    <p><strong>4. Memória Virtual (Arquivo de Paginação)</strong><br>
-    O que o usuário pesquisa: Exibir configurações avançadas do sistema. Onde vai dar: Aba Avançado > Desempenho (Configurações) > Avançado > Memória Virtual. A Bagunça: Fixar manualmente um valor gigante para o arquivo de paginação. Realidade: O Windows gerencia isso melhor que o técnico. Valores fixos errados causam erros de "Memória Insuficiente" ou desgastam o SSD desnecessariamente por uso excessivo de escrita.</p>
+<p><strong>4. Memória Virtual (Arquivo de Paginação):</strong> Fixar manualmente um valor gigante. Realidade: O Windows gerencia isso melhor que o técnico. Valores fixos errados causam erros de "Memória Insuficiente".</p>
 
-    <p><strong>5. Elementos Gráficos</strong><br>
-    O que o usuário pesquisa: Gráficos ou Configurações de Elementos Gráficos. Onde vai dar: Configurações de exibição de gráficos. A Bagunça: Adicionar jogos manualmente e forçar o "Alto Desempenho". Realidade: Em desktops com uma única placa, o Windows já faz isso por padrão. É uma alteração redundante que não injeta potência extra no hardware.</p>
+<img src="PAGINACAO MEMORIA.png" alt="Paginação de Memória" width="400">
 
-    <p><strong>6. Aplicativos de Inicialização</strong><br>
-    O que o usuário pesquisa: Inicialização ou Aplicativos de inicialização. Onde vai dar: Configurações > Aplicativos > Inicialização. A Bagunça: Desativar tudo o que estiver na lista. Realidade: O usuário acaba desativando drivers de som, vídeo ou softwares de periféricos. O PC liga rápido, mas o hardware não funciona corretamente, gerando um defeito provocado.</p>
+<p><strong>9. Memória Virtual (pagefile.sys) - Atalho: sysdm.cpl:</strong> Uso Profissional: Manter a opção "Gerenciar automaticamente" marcada. O Windows ajusta o tamanho conforme a demanda real.</p>
 
-    <p><strong>7. UAC (Controle de Conta de Usuário)</strong><br>
-    O que o usuário pesquisa: UAC ou Alterar configurações de Controle de Conta de Usuário. Onde vai dar: Controle de conta de usuário. A Bagunça: Arrastar a barra para "Nunca notificar". Realidade: Destrói a segurança básica. Qualquer script malicioso agora pode rodar com privilégios de Administrador sem que o usuário receba o alerta.</p>
+<h1>OS OUTROS REFÚGIOS DO LIXO TÉCNICO: REGISTRO, TAREFAS E BIOS</h1>
 
-    <p><strong>8. Modo de Jogo</strong><br>
-    O que o usuário pesquisa: Modo de Jogo. Onde vai dar: Configurações > Jogos > Modo de Jogo. A Bagunça: Ativar achando que o PC vai ganhar o dobro de potência. Realidade: Ele apenas pausa updates em segundo plano. Se o hardware é limitado, o Modo de Jogo não faz milagre.</p>
+<p><strong>1. GERENCIADOR DE TAREFAS (Prioridades):</strong> O Vício: Definir Prioridade > "Tempo Real". Realidade: Pode fazer com que o processador ignore drivers essenciais como mouse e teclado.</p>
 
-    <p><strong>9. Memória Virtual (pagefile.sys) - Atalho: sysdm.cpl</strong><br>
-    O que é: Uma extensão da RAM no disco (SSD/HD) para evitar travamentos quando a memória física lota. O Erro Amador: Desativar a paginação ou fixar valores gigantes manualmente ("tunar"). Isso causa instabilidade e erro de "Memória Insuficiente". Uso Profissional: Manter a opção "Gerenciar automaticamente" marcada. O Windows ajusta o tamanho conforme a demanda real, garantindo que o arquivo fique apenas na unidade mais rápida (SSD) e nunca em HDs de backup.</p>
-    
-    <img src="PAGINACAO MEMORIA.png" alt="Paginação de Memória" width="400">
+<p><strong>2. EDITOR DO REGISTRO (Regedit):</strong> Realidade: O Registro é o cérebro do Windows. Seguir tutoriais sem critério é a maior causa de Telas Azuis (BSOD).</p>
 
-    <h1>OS OUTROS REFÚGIOS DO LIXO TÉCNICO: REGISTRO, TAREFAS E BIOS</h1>
+<p><strong>3. CONFIGURAÇÕES DE BIOS:</strong> Realidade: Alterar voltagens ou XMP em placas básicas sem verificar a refrigeração ignora a temperatura real da bancada.</p>
 
-    <p><strong>1. GERENCIADOR DE TAREFAS (Prioridades de Processo)</strong><br>
-    O Vício: Clicar com o botão direito em um jogo ou aplicativo > Definir Prioridade > marcar como "Tempo Real" ou "Alta". Realidade: O Windows gerencia as prioridades de forma dinâmica e inteligente. Ao forçar "Tempo Real", você pode fazer com que o processador ignore drivers essenciais (como o do mouse ou teclado) para focar apenas no programa. O resultado não é mais velocidade, mas sim travamentos (stuttering) e instabilidade geral do sistema.</p>
+<h1>DOCUMENTO TÉCNICO 02: HARDWARE REAL: ARQUITETURAS E BARRAMENTOS</h1>
 
-    <p><strong>2. EDITOR DO REGISTRO (Regedit)</strong><br>
-    O Vício: Criar chaves "mágicas" que prometem "limpar a memória RAM automaticamente" ou "desbloquear o limite de banda da rede". Realidade: O Registro é o cérebro do Windows. Seguir tutoriais de internet que mandam criar ou deletar chaves sem critério técnico é a maior causa de Telas Azuis (BSOD) e corrupção do sistema a longo prazo. Não existe "chave secreta" que supere o limite físico do seu plano de internet ou da sua placa de rede.</p>
+<h2>2.1 Identificação de Placas e Gerações</h2>
+<p>Séries H61 e H81 (DDR3) e Série H110 (DDR4). Gerações Avançadas (12ª Gen+) onde o padrão DDR5 torna otimizações de software do passado irrelevantes.</p>
 
-    <p><strong>3. CONFIGURAÇÕES DE BIOS (Ajustes de "Guru")</strong><br>
-    O Vício: Alterar voltagens do processador ou ativar perfis de memória (XMP/DOCP) em placas-mãe de entrada (básicas) sem verificar a refrigeração ou o VRM. Realidade: O que funciona em um PC de entusiasta pode causar reinicializações constantes e degradação do hardware em máquinas comuns. O "overclock de um clique" do YouTube frequentemente ignora a temperatura real da bancada e a qualidade dos componentes físicos.</p>
+<h2>2.2 Laudo Técnico (Análise CPU-Z)</h2>
+<p><strong>Aba Mainboard: Certificação</strong></p>
+<img src="ABAMAIBOARD.png" alt="Aba Mainboard" width="400">
 
-    <p><strong>4. CONFIGURAÇÕES DE ELEMENTOS GRÁFICOS</strong><br>
-    O Vício: Adicionar programas manualmente na barra de pesquisa de gráficos para forçar o "Alto Desempenho" em Desktops comuns. Realidade: Em máquinas que possuem apenas uma placa de vídeo dedicada, o Windows já entrega o desempenho máximo por padrão. Essa é uma alteração redundante que não gera ganho de FPS, servindo apenas para o técnico perder tempo e parecer que fez um "ajuste fino".</p>
+<p><strong>Aba SPD: Verificação de Tensão</strong></p>
+<img src="SPDCPUZ.png" alt="SPD CPU-Z" width="400">
 
-    <h1>DOCUMENTO TÉCNICO 02: Hardware Real: Arquiteturas e Barramentos</h1>
+<div class="alerta">
+    ALERTA CRÍTICO: VERIFIQUE A VOLTAGEM DA MEMÓRIA (1.35V). O uso de memórias de 1.50V em slots que suportam apenas Low Voltage causará danos irreversíveis ao controlador de memória do processador.
+</div>
 
-    <h2>2.1 Identificação de Placas e Gerações</h2>
-    <p><strong>Classificação:</strong><br>
-    Séries H61 e H81: Equipamentos de 2ª a 4ª Geração Intel. Utilizam memórias DDR3. Excelentes para tarefas básicas, mas limitadas para o fluxo intenso de dados moderno.<br>
-    Série H110: A base sólida da 6ª Geração. Introdução do padrão DDR4. Oferece barramentos muito mais rápidos e suporte nativo a SSDs sem grandes perdas de velocidade.<br>
-    Gerações Avançadas (12ª Gen+): Onde o padrão DDR5 atinge frequências altíssimas, tornando qualquer "otimização" de software do passado completamente irrelevante.</p>
-    <p><strong>Configuração Recomendada:</strong> Placa H110 + i5 6ª Geração + 8GB DDR4 + SSD. <strong>Restrições de Uso:</strong> Este conjunto foca em fluidez para escritório. Não recomendado para renderização pesada ou jogos AAA.</p>
+<img src="MEMORYCPUZ.png" alt="Memória CPU-Z" width="400">
 
-    <h2>2.2 Laudo Técnico (Análise CPU-Z)</h2>
-    <p><strong>Aba Mainboard: Certificação</strong></p>
-    <img src="ABAMAIBOARD.png" alt="Aba Mainboard" width="400">
-    <p>LAUDO: Identificação do chipset e barramento de dados real do sistema.<br>
-    <strong>ALERTA CRÍTICO: VERIFIQUE A VOLTAGEM DA MEMÓRIA (1.35V).</strong> O uso de memórias de 1.50V em slots que suportam apenas Low Voltage causará danos irreversíveis ao controlador de memória do processador.</p>
+<p>LAUDO: Confirmação de padrão Low Voltage (1.35V) para máxima estabilidade e durabilidade.</p>
 
-    <p><strong>Aba SPD: Verificação de Tensão</strong></p>
-    <img src="SPDCPUZ.png" alt="SPD CPU-Z" width="400">
-    <img src="MEMORYCPUZ.png" alt="Memória CPU-Z" width="400">
-    <p>LAUDO: Confirmação de padrão Low Voltage (1.35V) para máxima estabilidade e durabilidade.</p>
-
-    <h2 style="color: #d32f2f;">CONCLUSÃO TÉCNICA FINAL</h2>
+<div style="border: 2px solid #d32f2f; padding: 20px; margin-top: 50px;">
+    <h2 style="margin-top: 0; color: #d32f2f;">CONCLUSÃO TÉCNICA FINAL</h2>
     <p>A verdadeira performance vem de hardware bem planejado e peças que conversam entre si na mesma voltagem e frequência. O conhecimento técnico é o que separa um PC problemático de uma ferramenta de trabalho confiável.</p>
+</div>
 
 </body>
 </html>
