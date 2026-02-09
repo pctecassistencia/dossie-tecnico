@@ -13,20 +13,18 @@
         padding: 30px;
         color: #000;
         background-color: #fff;
-        /* Aplica o justificado em todo o corpo do documento */
         text-align: justify;
     }
-    /* Mantém os títulos centralizados conforme seu código original */
     .centralizado {
         text-align: center;
     }
-    /* Estilo para as imagens que você vai inserir */
     img {
         display: block;
         max-width: 100%;
         height: auto;
-        margin: 20px auto;
+        margin: 25px auto;
         border: 1px solid #ccc;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     }
 </style>
 </head>
@@ -98,7 +96,7 @@
 
 <p><strong>4. Temp e %Temp% (A ilusão do FPS)</strong><br /><strong>O que pregam:</strong> Vendem a ideia de que limpar essas pastas é a solução definitiva para parar a lentidão em jogos e aumentar o FPS.</p>
 
-<p><strong>Realidade:</strong> Esses arquivos ocupam apenas espaço passivo no disco. Se o seu SSD ou HD não está com 100% de lotação, apagar esses arquivos tem efeito zero na taxa de quadros (FPS) ou na velocidade de processamento da CPU e GPU. A pasta <strong>Temp</strong> é a lixeira do Sistema (drivers e Windows), enquanto a pasta <strong>%Temp%</strong> é o rascunho do Usuário (apps e navegador). Limpá-las apenas recupera espaço em disco e não aumenta o FPS ou o poder do processador.</p>
+<p><strong>Realidade:</strong> Esses arquivos ocupam apenas espaço passivo no disco. Se o seu SSD ou HD não está com 100% de lotação, apagar esses arquivos tem efeito zero na taxa de quadros (FPS) ou na velocidade de processamento da CPU e GPU. A pasta <strong>Temp</strong> é a lixeira do Sistema (drivers e Windows), enquanto a pasta <strong>%Temp%</strong> é o rascunho do Usuário (apps e navegador). Limpá-las apenas recupera espaço em disco e não aumenta o FPS ou o poder do processador. O erro amador é dizer que isso "desafoga" o PC, quando na verdade pode até deixar a abertura de programas mais lenta no primeiro momento.</p>
 
 <p><strong>5. services.msc (O desativador de funções)</strong><br /><strong>O que pregam:</strong> Fazem listas gigantes de serviços que você "deve" desativar para deixar o Windows "super leve".</p>
 
@@ -108,63 +106,91 @@
 
 <p><strong>Realidade:</strong> É uma ferramenta útil para espaço em disco, mas os gurus a "vendem" como solução de velocidade. Limpar a lixeira ou arquivos temporários antigos não torna um processador lento em um processador rápido.</p>
 
+<p>Obs. Vendem no sentido de passar a informação.</p>
+
 <p><strong>7. O CASO DO MRT: FERRAMENTA REAL VS. O USO AMADOR</strong><br /><strong>O que o usuário pesquisa:</strong> MRT (no Iniciar ou no Win+R). <strong>O que as redes sociais dizem:</strong> <span style="color: #ff0000;">"O antivírus secreto e gratuito que a Microsoft esconde de você para limpar todo o seu PC"</span>.</p>
 
-<p><strong>A Realidade Técnica:</strong> O MRT não é um antivírus. Ele é uma ferramenta de pós-infecção, atualizada mensalmente pela Microsoft para remover apenas ameaças específicas e conhecidas que já estão ativas no sistema. Ele não oferece proteção em tempo real. Ele é apenas um utilitário de varredura pontual.</p>
+<p><strong>A Realidade Técnica:</strong> O MRT não é um antivírus. Ele é uma ferramenta de pós-infecção, atualizada mensalmente pela Microsoft para remover apenas ameaças específicas e conhecidas que já estão ativas no sistema. Ele não oferece proteção em tempo real. Se você baixar um vírus agora, o MRT não vai te impedir; ele só vai agir se você executá-lo manualmente e se aquele vírus específico estiver na lista dele.</p>
+
+<p><strong>O Lixo Amador:</strong> "Vender" o MRT como substituto de uma proteção ativa ou como um "segredo de performance" é um erro técnico. Ele é apenas um utilitário de varredura pontual.</p>
+
+<p>Obs: "vender" no sentido de mostrar.</p>
 
 <p><strong>MAPA DA BAGUNÇA: O LIXO DAS CONFIGURAÇÕES VIA "PESQUISAR"</strong></p>
 
-<p><strong>1. Aparência e Desempenho</strong><br /><strong>O que o usuário pesquisa:</strong> Aparência ou Ajustar a aparência. Onde vai dar: Janela Opções de Desempenho > Aba Efeitos Visuais. A Bagunça: Mandam marcar "Ajustar para obter um melhor desempenho". <strong>Realidade:</strong> Em máquinas modernas, a economia de recursos é insignificante. O PC apenas ganha um visual datado de 1995.</p>
+<p><strong>1. Aparência e Desempenho</strong><br /><strong>O que o usuário pesquisa:</strong> Aparência ou Ajustar a aparência. Onde vai dar: Janela Opções de Desempenho > Aba Efeitos Visuais. A Bagunça: Mandam marcar "Ajustar para obter um melhor desempenho".</p>
 
-<p><strong>2. Plano de Energia (O Mito do Desempenho Máximo)</strong><br /><strong>O que o usuário pesquisa:</strong> Plano de Energia ou Editar plano de energia. Onde vai dar: Painel de Controle > Opções de Energia. A Bagunça: Ativar o modo "Desempenho Máximo". <strong>Realidade:</strong> Em desktops, o processador já sobe o clock automaticamente. Esse modo apenas gera calor e gasto de energia desnecessários.</p>
+<p><strong>Realidade:</strong> Em máquinas modernas, a economia de recursos é insignificante. O PC apenas ganha um visual datado de 1995, enquanto o processamento real de dados continua o mesmo.</p>
 
-<p><strong>3. Configurações de Privacidade</strong><br /><strong>O que o usuário pesquisa:</strong> Privacidade. Onde vai dar: Configurações > Privacidade e Segurança. A Bagunça: Desativar todas as chaves de telemetria. <strong>Realidade:</strong> O impacto na performance é nulo. O Windows não acelera porque parou de enviar logs.</p>
+<p><strong>2. Plano de Energia (O Mito do Desempenho Máximo)</strong><br /><strong>O que o usuário pesquisa:</strong> Plano de Energia ou Editar plano de energia. Onde vai dar: Painel de Controle > Opções de Energia. A Bagunça: Ativar o modo "Desempenho Máximo" ou "Alta Performance".</p>
 
-<p><strong>4. Memória Virtual (Arquivo de Paginação)</strong><br /><strong>O que o usuário pesquisa:</strong> Exibir configurações avançadas do sistema. Onde vai dar: Aba Avançado > Desempenho > Avançado > Memória Virtual. A Bagunça: Fixar manualmente um valor gigante. <strong>Realidade:</strong> O Windows gerencia isso melhor que o técnico. Valores fixos errados causam erros de "Memória Insuficiente".</p>
+<p><strong>Realidade:</strong> Em desktops, o processador já sobe o clock automaticamente quando exigido. Esse modo apenas impede o descanso do hardware quando ocioso, gerando calor e gasto de energia desnecessários, sem ganho real de FPS.</p>
 
-<p><strong>5. Elementos Gráficos</strong><br /><strong>O que o usuário pesquisa:</strong> Gráficos. Onde vai dar: Configurações de exibição de gráficos. A Bagunça: Adicionar jogos manualmente e forçar o "Alto Desempenho". <strong>Realidade:</strong> Em desktops com uma única placa, o Windows já faz isso por padrão.</p>
+<p><strong>3. Configurações de Privacidade</strong><br /><strong>O que o usuário pesquisa:</strong> Privacidade. Onde vai dar: Configurações > Privacidade e Segurança. A Bagunça: Desativar todas as chaves de telemetria e diagnósticos. <strong>Realidade:</strong> O impacto na performance é nulo. O Windows não acelera porque parou de enviar logs. O risco real é bloquear permissões que softwares e drivers legítimos precisam para funcionar.</p>
 
-<p><strong>6. Aplicativos de Inicialização</strong><br /><strong>O que o usuário pesquisa:</strong> Inicialização. A Bagunça: Desativar tudo o que estiver na lista. <strong>Realidade:</strong> O usuário acaba desativando drivers e softwares de periféricos vitais.</p>
+<p><strong>4. Memória Virtual (Arquivo de Paginação)</strong><br /><strong>O que o usuário pesquisa:</strong> Exibir configurações avançadas do sistema. Onde vai dar: Aba Avançado > Desempenho (Configurações) > Avançado > Memória Virtual. A Bagunça: Fixar manualmente um valor gigante para o arquivo de paginação.</p>
 
-<p><strong>7. UAC (Controle de Conta de Usuário)</strong><br /><strong>A Bagunça:</strong> Arrastar a barra para "Nunca notificar". <strong>Realidade:</strong> Destrói a segurança básica, permitindo que scripts rodem como ADM sem alerta.</p>
+<img src="PAGINACAO MEMORIA.png" alt="Configuração de Memória Virtual">
 
-<p><strong>8. Modo de Jogo</strong><br /><strong>Realidade:</strong> Ele apenas pausa updates em segundo plano. Se o hardware é limitado, o Modo de Jogo não faz milagre.</p>
+<p><strong>Realidade:</strong> O Windows gerencia isso melhor que o técnico. Valores fixos errados causam erros de "Memória Insuficiente" ou desgastam o SSD desnecessariamente por uso excessivo de escrita.</p>
 
-<p><strong>9. Memória Virtual (pagefile.sys) - Atalho: sysdm.cpl</strong><br /><strong>Uso Profissional:</strong> Manter a opção "Gerenciar automaticamente" marcada.</p>
+<p><strong>5. Elementos Gráficos</strong><br /><strong>O que o usuário pesquisa:</strong> Gráficos ou Configurações de Elementos Gráficos. Onde vai dar: Configurações de exibição de gráficos. A Bagunça: Adicionar jogos manualmente e forçar o "Alto Desempenho".</p>
+
+<p><strong>Realidade:</strong> Em desktops com uma única placa, o Windows já faz isso por padrão. É uma alteração redundante que não injeta potência extra no hardware.</p>
+
+<p><strong>6. Aplicativos de Inicialização</strong><br /><strong>O que o usuário pesquisa:</strong> Inicialização ou Aplicativos de inicialização. Onde vai dar: Configurações > Aplicativos > Inicialização. A Bagunça: Desativar tudo o que estiver na lista.</p>
+
+<p><strong>Realidade:</strong> O usuário acaba desativando drivers de som, vídeo ou softwares de periféricos. O PC liga rápido, mas o hardware não funciona corretamente, gerando um defeito provocado.</p>
+
+<p><strong>7. UAC (Controle de Conta de Usuário)</strong><br /><strong>O que o usuário pesquisa:</strong> UAC ou Alterar configurações de Controle de Conta de Usuário. Onde vai dar: Controle de conta de usuário. A Bagunça: Arrastar a barra para "Nunca notificar".</p>
+
+<p><strong>Realidade:</strong> Destrói a segurança básica. Qualquer script malicioso agora pode rodar com privilégios de Administrador sem que o usuário receba o alerta.</p>
+
+<p><strong>8. Modo de Jogo</strong><br /><strong>O que o usuário pesquisa:</strong> Modo de Jogo. Onde vai dar: Configurações > Jogos > Modo de Jogo. A Bagunça: Ativar achando que o PC vai ganhar o dobro de potência. <strong>Realidade:</strong> Ele apenas pausa updates em segundo plano. Se o hardware é limitado, o Modo de Jogo não faz milagre.</p>
+
+<p><strong>9. Memória Virtual (pagefile.sys) - Atalho: sysdm.cpl</strong><br /><strong>O que é</strong>: Uma extensão da RAM no disco (SSD/HD) para evitar travamentos quando a memória física lota. O Erro Amador: Desativar a paginação ou fixar valores gigantes manualmente ("tunar"). Isso causa instabilidade e erro de "Memória Insuficiente". Uso Profissional: Manter a opção "Gerenciar automaticamente" marcada. O Windows ajusta o tamanho conforme a demanda real, garantindo que o arquivo fique apenas na unidade mais rápida (SSD) e nunca em HDs de backup.</p>
 
 <p><strong>OS OUTROS REFÚGIOS DO LIXO TÉCNICO: REGISTRO, TAREFAS E BIOS</strong></p>
 
-<p><strong>1. GERENCIADOR DE TAREFAS (Prioridades)</strong><br /><strong>Realidade:</strong> Ao forçar "Tempo Real", o processador pode ignorar drivers essenciais (mouse/teclado), causando travamentos.</p>
+<p><strong>1. GERENCIADOR DE TAREFAS (Prioridades de Processo)</strong><br /><strong>O Vício:</strong> Clicar com o botão direito em um jogo ou aplicativo > Definir Prioridade > marcar como "Tempo Real" ou "Alta". Realidade: O Windows gerencia as prioridades de forma dinâmica e inteligente. Ao forçar "Tempo Real", você pode fazer com que o processador ignore drivers essenciais (como o do mouse ou teclado) para focar apenas no programa. O resultado não é mais velocidade, mas sim travamentos (stuttering) e instabilidade geral do sistema.</p>
 
-<p><strong>2. EDITOR DO REGISTRO (Regedit)</strong><br /><strong>Realidade:</strong> Deletar chaves sem critério é a maior causa de Telas Azuis (BSOD) e corrupção do sistema.</p>
+<p><strong>2. EDITOR DO REGISTRO (Regedit)</strong><br /><strong>O Vício:</strong> Criar chaves "mágicas" que prometem "limpar a memória RAM automaticamente" ou "desbloquear o limite de banda da rede". <strong>Realidade:</strong> O Registro é o cérebro do Windows. Seguir tutoriais de internet que mandam criar ou deletar chaves sem critério técnico é a maior causa de Telas Azuis (BSOD) e corrupção do sistema a longo prazo. Não existe "chave secreta" que supere o limite físico do seu plano de internet ou da sua placa de rede.</p>
 
-<p><strong>3. CONFIGURAÇÕES DE BIOS (Ajustes de "Guru")</strong><br /><strong>Realidade:</strong> Overclock em placas-mãe de entrada sem verificar o VRM causa degradação do hardware.</p>
+<p><strong>3. CONFIGURAÇÕES DE BIOS (Ajustes de "Guru")</strong><br /><strong>O Vício:</strong> Alterar voltagens do processador ou ativar perfis de memória (XMP/DOCP) em placas-mãe de entrada (básicas) sem verificar a refrigeração ou o VRM.</p>
 
-<p><strong>4. CONFIGURAÇÕES DE ELEMENTOS GRÁFICOS</strong><br /><strong>Realidade:</strong> Alteração redundante que serve apenas para o técnico parecer que fez um "ajuste fino".</p>
+<p><strong>Realidade:</strong> O que funciona em um PC de entusiasta pode causar reinicializações constantes e degradação do hardware em máquinas comuns. O "overclock de um clique" do YouTube frequentemente ignora a temperatura real da bancada e a qualidade dos componentes físicos.</p>
 
-<p><strong><span style="color: #0000ff;">Hardware Real: Arquiteturas e Barramentos</span></strong><br /><strong>2.1 Identificação de Placas e Gerações</strong></p>
+<p><strong>4. CONFIGURAÇÕES DE ELEMENTOS GRÁFICOS</strong><br /><strong>O Vício:</strong> Adicionar programas manualmente na barra de pesquisa de gráficos para forçar o "Alto Desempenho" em Desktops comuns.</p>
 
-<p><strong>Séries H61 e H81:</strong> Equipamentos de 2ª a 4ª Geração Intel (DDR3). Limitadas para o fluxo atual.</p>
+<p><strong>Realidade:</strong> Em máquinas que possuem apenas uma placa de vídeo dedicada, o Windows já entrega o desempenho máximo por padrão. Essa é uma alteração redundante que não gera ganho de FPS, servindo apenas para o técnico perder tempo e parecer que fez um "ajuste fino".</p>
 
-<p><strong>Série H110:</strong> A base sólida da 6ª Geração (DDR4). Oferece barramentos muito mais rápidos.</p>
+<p><strong><span style="color: #0000ff;">Hardware Real: Arquiteturas e Barramentos</span></strong><br /><strong>2.1 Identificação de Placas e Gerações</strong><br /><strong>Classificação:</strong></p>
 
-<p><strong>Gerações Avançadas (12ª Gen+)</strong>: O padrão DDR5 torna qualquer "otimização" antiga irrelevante.</p>
+<p><strong>Séries H61 e H81:</strong> Equipamentos de 2ª a 4ª Geração Intel. Utilizam memórias DDR3. Excelentes para tarefas básicas, mas limitadas para o fluxo intenso de dados moderno hoje em dia.</p>
 
-<p><strong>Configuração Recomendada:</strong> Placa H110 + i5 6ª Geração + 8GB DDR4 + SSD.</p>
+<p><strong>Série H110:</strong> A base sólida da 6ª Geração. Introdução do padrão DDR4. Oferece barramentos muito mais rápidos e suporte nativo a SSDs sem grandes perdas de velocidade.</p>
 
-<p><strong>2.2 Laudo Técnico (Análise CPU-Z)</strong></p>
+<p><strong>Gerações Avançadas (12ª Gen+)</strong>: Onde o padrão DDR5 atinge frequências altíssimas, tornando qualquer "otimização" de software do passado completamente irrelevante.</p>
 
-<img src="MAINBOARD.png" alt="Aba Mainboard">
+<p><strong>Configuração Recomendada:</strong> Placa H110 + i5 6ª Geração + 8GB DDR4 + SSD. Restrições de Uso: Este conjunto foca em fluidez para escritório. Não recomendado para renderização pesada ou jogos AAA.</p>
+
+<p><strong>2.2 Laudo Técnico (Análise CPU-Z)</strong><br /><strong>Aba Mainboard:</strong> Certificação</p>
+
+<img src="ABAMAIBOARD.png" alt="Aba Mainboard CPU-Z">
 
 <p><strong>LAUDO:</strong> Identificação do chipset e barramento de dados real do sistema.</p>
 
-<p><strong>ALERTA CRÍTICO:</strong> VERIFIQUE A VOLTAGEM DA MEMÓRIA (1.35V). O uso de memórias de 1.50V em slots Low Voltage causará danos irreversíveis.</p>
+<img src="MEMORYCPUZ.png" alt="Aba Memory CPU-Z">
 
-<img src="SPD.png" alt="Aba SPD">
+<p><strong>ALERTA CRÍTICO:</strong> VERIFIQUE A VOLTAGEM DA MEMÓRIA (1.35V). O uso de memórias de 1.50V em slots que suportam apenas Low Voltage causará danos irreversíveis ao controlador de memória do processador.</p>
 
-<p><strong>LAUDO:</strong> Confirmação de padrão Low Voltage (1.35V) para máxima estabilidade.</p>
+<p><strong>Aba SPD:</strong> Verificação de Tensão</p>
 
-<p><strong>CONCLUSÃO TÉCNICA FINAL</strong><br />A verdadeira performance vem de hardware bem planejado e peças que conversam entre si na mesma voltagem e frequência.</p>
+<img src="SPDCPUZ.png" alt="Aba SPD CPU-Z">
+
+<p><strong>LAUDO:</strong> Confirmação de padrão Low Voltage (1.35V) para máxima estabilidade e durabilidade.</p>
+
+<p><strong>CONCLUSÃO TÉCNICA FINAL</strong><br />A verdadeira performance vem de hardware bem planejado e peças que conversam entre si na mesma voltagem e frequência. O conhecimento técnico é o que separa um PC problemático de uma ferramenta de trabalho confiável.</p>
 
 </body>
-</html
+</html>
